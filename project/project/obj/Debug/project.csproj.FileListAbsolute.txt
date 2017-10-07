@@ -1,0 +1,14 @@
+c:\users\lingl\onedrive\documents\visual studio 2015\Projects\project\project\bin\Debug\project.exe.config
+c:\users\lingl\onedrive\documents\visual studio 2015\Projects\project\project\bin\Debug\project.exe
+c:\users\lingl\onedrive\documents\visual studio 2015\Projects\project\project\bin\Debug\project.pdb
+c:\users\lingl\onedrive\documents\visual studio 2015\Projects\project\project\obj\Debug\project.csprojResolveAssemblyReference.cache
+c:\users\lingl\onedrive\documents\visual studio 2015\Projects\project\project\obj\Debug\MainWindow.g.cs
+c:\users\lingl\onedrive\documents\visual studio 2015\Projects\project\project\obj\Debug\App.g.cs
+c:\users\lingl\onedrive\documents\visual studio 2015\Projects\project\project\obj\Debug\project_MarkupCompile.cache
+c:\users\lingl\onedrive\documents\visual studio 2015\Projects\project\project\obj\Debug\project_MarkupCompile.lref
+c:\users\lingl\onedrive\documents\visual studio 2015\Projects\project\project\obj\Debug\MainWindow.baml
+c:\users\lingl\onedrive\documents\visual studio 2015\Projects\project\project\obj\Debug\project.g.resources
+c:\users\lingl\onedrive\documents\visual studio 2015\Projects\project\project\obj\Debug\project.Properties.Resources.resources
+c:\users\lingl\onedrive\documents\visual studio 2015\Projects\project\project\obj\Debug\project.csproj.GenerateResource.Cache
+c:\users\lingl\onedrive\documents\visual studio 2015\Projects\project\project\obj\Debug\project.exe
+c:\users\lingl\onedrive\documents\visual studio 2015\Projects\project\project\obj\Debug\project.pdb
