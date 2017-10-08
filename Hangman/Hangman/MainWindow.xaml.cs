@@ -22,6 +22,8 @@ namespace Hangman
 	/// </summary>
 	public partial class MainWindow : Window
 	{
+        SoundPlayer a;
+        bool muteB  = true;
 		public MainWindow()
 		{
 			InitializeComponent();
@@ -30,35 +32,52 @@ namespace Hangman
 
 		private void LoopSound()
 		{
-            //Uri soundfile = new Uri("pack://application:,,,/Visager_-_04_-_Factory_Time.wav");
-            //StreamResourceInfo sound = Application.GetResourceStream(soundfile);
-            //SoundPlayer a = new SoundPlayer("pack://application:,,,/Visager_-_04_-_Factory_Time.wav");
-            //a.PlayLooping();
-        }
+			Uri soundfile = new Uri("pack://application:,,,/gamesound.wav");
+			StreamResourceInfo sound = Application.GetResourceStream(soundfile);
+			SoundPlayer a = new SoundPlayer(sound.Stream);
+            if (muteB == true)
+            {
+		    	a.PlayLooping();
+                muteB = false;
+            }
+            else
+            {
+                a.Stop();
+                muteB = true;
+            }
 
-		private void btnPlay_Click(object sender, RoutedEventArgs e)
-		{
-			string[] Names = {"2306Ren" } ;
-			int i;
-			for (i = 0; i < Names.Length; i++)
-			{
-				if (txtUsername.Text == Names[i])
-				{
-					this.Hide();
-					new Window1().Show();
-				}
-               else if (txtUsername.Text != Names[i])
+
+		}
+
+        private void btnPlay_Click(object sender, RoutedEventArgs e)
+        {
+                string[] Names = { "2306Ren" };
+                int i;
+                for (i = 0; i < Names.Length; i++)
+                {
+                    if (txtUsername.Text == Names[i])
+                    {
+                        this.Close();
+                        new Window1().Show();
+                    }
+                }
+                if (txtUsername.Text != Names[i])
                 {
                     MessageBox.Show("Please register to play");
                 }
             }
-		
-		}
+
+
 
 		private void btnRegister_Click(object sender, RoutedEventArgs e)
 		{
-			this.Hide();
+			this.Close();
 			new Window2().Show();
 		}
-	}
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            LoopSound();
+        }
+    }
 }
