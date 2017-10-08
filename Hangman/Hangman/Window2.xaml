@@ -9,7 +9,7 @@
     <Grid Background="Black">
         <TextBox x:Name="txtUsername" HorizontalAlignment="Left" Foreground="Green" Height="23" Margin="310,86,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="170" FontFamily="Century Gothic"/>
         <Label x:Name="label" Content="Enter a unique username" HorizontalAlignment="Left" Margin="48,84,0,0" Foreground="Green" VerticalAlignment="Top" Width="164" FontFamily="Century Gothic"/>
-        <Button x:Name="btnAdd" Content="Add me" Background="Black" HorizontalAlignment="Left" Foreground="Green" Margin="213,192,0,0" VerticalAlignment="Top" Width="75" FontFamily="Century Gothic" Height="25" Click="btnAdd_Click"/>
+        <Button x:Name="btnAdd" Content="Add me" Background="Black" HorizontalAlignment="Left" Foreground="Green" Margin="213,192,0,0" VerticalAlignment="Top" Width="75" FontFamily="Century Gothic" Height="25"/>
         <Button x:Name="btnHelp" Content="Help" Background="Black" HorizontalAlignment="Left" Margin="385,329,0,0" Foreground="Green" VerticalAlignment="Top" Width="75" FontFamily="Century Gothic"/>
 
     </Grid>

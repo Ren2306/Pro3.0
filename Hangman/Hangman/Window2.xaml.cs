@@ -11,7 +11,6 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using System.IO;
 
 namespace Hangman
 {
@@ -23,22 +22,6 @@ namespace Hangman
 		public Window2()
 		{
 			InitializeComponent();
-		}
-
-		private void btnAdd_Click(object sender, RoutedEventArgs e)
-		{
-			StreamWriter w = null;
-			if (File.Exists("Users"))
-			{
-				w.WriteLine(txtUsername.Text);
-				w.Close();
-			}
-			else
-			{
-				w = File.CreateText("Users");
-				w.WriteLine(txtUsername.Text);
-				w.Close();
-			}
 		}
 	}
 }

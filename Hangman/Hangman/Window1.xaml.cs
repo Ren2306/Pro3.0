@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -10,54 +11,77 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Resources;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace Hangman
 {
-	/// <summary>
-	/// Interaction logic for Window1.xaml
-	/// </summary>
-	public partial class Window1 : Window
-	{
-		public Window1()
-		{
-			InitializeComponent();
-		}
+    /// <summary>
+    /// Interaction logic for Window1.xaml
+    /// </summary>
+    public partial class Window1 : Window
+    {
+        private DispatcherTimer timer;
+        private DateTime TimerStart;
+        public Window1()
+        {
+            InitializeComponent();
+            LoopSound();
 
-		private void btnSubmit_Click(object sender, RoutedEventArgs e)
-		{
-			Random rnd = new Random();
-			int ranNum = Convert.ToInt32(rnd.Next(0, 50));
-			string[] Movies = { "" };
-			string[] Cars = { " " };
-			string[] Animals = {"rat", "lion", "monkey", "alligator", "elephant", "chimpanzee", "crocodile", "aardvark", "armadillo", "pangolin", "basilisk", "barracuda", "aphid", "koala", "lungfish", "chimaera", "nightingale", "oribi", "ptarmigan"  };
-			string[] Celebrities = { " " };
-			string cmb = cmbCategory.SelectedItem.ToString();
-			if(cmb == "Movies")
-			{
-				txtJumbled.Text = Convert.ToString (Movies[ranNum]);
-				//ADD SCORE
-			}
-			else if (cmb == "Cars")
-			{
-				txtJumbled.Text = Convert.ToString(Cars[ranNum]);
-				//ADD SCORE
-			}
-			else if (cmb == "Animals")
-			{
-				txtJumbled.Text = Convert.ToString(Animals[ranNum]);
-				//ADD SCORE
-			}
-			else if (cmb == "Celebrities")
-			{
-				txtJumbled.Text = Convert.ToString(Celebrities[ranNum]);
-				//ADD SCORE
-			}
-			else
-			{
-				MessageBox.Show("Please select a category");
-			}
-				
-		}
-	}
+            timer = new DispatcherTimer();
+
+            TimerStart = DateTime.Now.AddMinutes(2);
+            timer.Interval = TimeSpan.FromSeconds(1);
+            timer.IsEnabled = true;
+            timer.Tick += dispatcherEvent;
+        }
+
+        private void dispatcherEvent(object sender, EventArgs e)
+        {
+            TimeSpan currentValue = TimerStart - DateTime.Now;
+
+            updateTime(currentValue);
+
+        }
+
+        private void updateTime(TimeSpan count_down)
+        {
+
+            txtTime.Content = $"0{count_down.Minutes}:{count_down.Seconds}";
+        }
+
+        private void btnSubmit_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void LoopSound()
+        {
+
+            Uri soundfile = new Uri("pack://application:,,,/gamesound.wav");
+            StreamResourceInfo sound = Application.GetResourceStream(soundfile);
+            SoundPlayer a = new SoundPlayer(sound.Stream);
+            a.Play();
+        }
+
+        private void Window_KeyDown(object sender, KeyEventArgs e)
+        {
+
+            switch (e.Key)
+            {
+
+                case Key.Enter: break;
+
+                case Key.P: break;
+
+            }
+
+        }
+
+        private void Window_KeyUp(object sender, KeyEventArgs e)
+        {
+
+        }
+    }
 }
