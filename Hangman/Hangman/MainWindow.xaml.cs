@@ -22,7 +22,6 @@ namespace Hangman
 	/// </summary>
 	public partial class MainWindow : Window
 	{
-        SoundPlayer a;
 		public MainWindow()
 		{
 			InitializeComponent();
@@ -31,11 +30,11 @@ namespace Hangman
 
 		private void LoopSound()
 		{
-			Uri soundfile = new Uri("pack://application:,,,/gamesound.wav");
-			StreamResourceInfo sound = Application.GetResourceStream(soundfile);
-			SoundPlayer a = new SoundPlayer(sound.Stream);
-			a.PlayLooping();
-		}
+            //Uri soundfile = new Uri("pack://application:,,,/Visager_-_04_-_Factory_Time.wav");
+            //StreamResourceInfo sound = Application.GetResourceStream(soundfile);
+            //SoundPlayer a = new SoundPlayer("pack://application:,,,/Visager_-_04_-_Factory_Time.wav");
+            //a.PlayLooping();
+        }
 
 		private void btnPlay_Click(object sender, RoutedEventArgs e)
 		{
@@ -45,19 +44,20 @@ namespace Hangman
 			{
 				if (txtUsername.Text == Names[i])
 				{
-					this.Close();
+					this.Hide();
 					new Window1().Show();
 				}
-			}
-			if(txtUsername.Text != Names[i])
-			{
-				MessageBox.Show("Please register to play");
-			}
+               else if (txtUsername.Text != Names[i])
+                {
+                    MessageBox.Show("Please register to play");
+                }
+            }
+		
 		}
 
 		private void btnRegister_Click(object sender, RoutedEventArgs e)
 		{
-			this.Close();
+			this.Hide();
 			new Window2().Show();
 		}
 	}
