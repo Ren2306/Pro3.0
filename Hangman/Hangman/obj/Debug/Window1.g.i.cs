@@ -152,6 +152,14 @@ namespace Hangman {
         #line default
         #line hidden
         
+        
+        #line 43 "..\..\Window1.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Button btnPlay;
+        
+        #line default
+        #line hidden
+        
         private bool _contentLoaded;
         
         /// <summary>
@@ -234,6 +242,12 @@ namespace Hangman {
             return;
             case 10:
             this.btnHint = ((System.Windows.Controls.Button)(target));
+            
+            #line 23 "..\..\Window1.xaml"
+            this.btnHint.Click += new System.Windows.RoutedEventHandler(this.btnHint_Click);
+            
+            #line default
+            #line hidden
             return;
             case 11:
             this.txtTime = ((System.Windows.Controls.Label)(target));
@@ -249,6 +263,15 @@ namespace Hangman {
             return;
             case 15:
             this.cmbCategory = ((System.Windows.Controls.ComboBox)(target));
+            return;
+            case 16:
+            this.btnPlay = ((System.Windows.Controls.Button)(target));
+            
+            #line 43 "..\..\Window1.xaml"
+            this.btnPlay.Click += new System.Windows.RoutedEventHandler(this.btnPlay_Click);
+            
+            #line default
+            #line hidden
             return;
             }
             this._contentLoaded = true;

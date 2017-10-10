@@ -20,7 +20,7 @@
                     <TextBox x:Name="txtJumbled"  BorderThickness="2"  FontSize="16" BorderBrush="Azure" Background="Transparent" HorizontalAlignment="Left" Foreground="Green" Height="27" Margin="10,249,0,0" TextWrapping="Wrap" Text="Jumbled text" VerticalAlignment="Top" Width="182" FontFamily="Century Gothic" Grid.ColumnSpan="2"/>
                     <TextBox x:Name="txtAnswer" Grid.Column="1" HorizontalAlignment="Right"  BorderThickness="2"  FontSize="16" BorderBrush="Azure" Background="Transparent" Foreground="Green" Height="27" Margin="0,249,25.2,0" TextWrapping="Wrap" Text="Answer" VerticalAlignment="Top" Width="205" FontFamily="Century Gothic" ToolTip="Enter Answer" GotFocus="txtAnswer_GotFocus"/>
                     <Button x:Name="btnSubmit" BorderBrush="Azure" BorderThickness="1" FontSize="15" Content="Submit" Grid.Column="1" HorizontalAlignment="Left" Foreground="Green" Margin="194.8,307,0,0" VerticalAlignment="Top" Width="75" Background="Black" FontFamily="Century Gothic" Click="btnSubmit_Click"/>
-                    <Button x:Name="btnHint" FontSize="15" BorderBrush="Azure"  BorderThickness="1.5" Content="Hint" Grid.Column="1" Background="Black" Foreground ="Green" HorizontalAlignment="Left" Margin="393,373,0,0" VerticalAlignment="Top" Width="75" FontFamily="Century Gothic"/>
+                    <Button x:Name="btnHint" FontSize="15" BorderBrush="Azure"  BorderThickness="1.5" Content="Hint" Grid.Column="1" Background="Black" Foreground ="Green" HorizontalAlignment="Left" Margin="393,373,0,0" VerticalAlignment="Top" Width="75" FontFamily="Century Gothic" Click="btnHint_Click"/>
                     <Label x:Name="txtTime" FontSize="20" Foreground="Green" Content="02:00" Grid.Column="1" HorizontalAlignment="Left" Height="31" Margin="407.6,10,0,0" VerticalAlignment="Top" />
                     <Label x:Name="txtScore" Content="0" FontSize="20" Foreground="Green" Grid.Column="1" HorizontalAlignment="Left" Height="31" Margin="54.6,10,0,0" VerticalAlignment="Top" />
                 </Grid>
@@ -40,6 +40,7 @@
                         <ComboBoxItem Content="Celebrities" HorizontalAlignment="Left" Width="118"/>
                         <ComboBoxItem Content="ComboBoxItem" HorizontalAlignment="Left" Width="118"/>
                     </ComboBox>
+                    <Button x:Name="btnPlay" Content="Play"  Foreground="Green" Background="Black" Grid.Column="2" HorizontalAlignment="Left" Margin="165,239,0,0" VerticalAlignment="Top" Width="75" Click="btnPlay_Click"/>
                 </Grid>
             </TabItem>
         </TabControl>
