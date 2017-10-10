@@ -22,25 +22,62 @@ namespace Hangman
 	/// </summary>
 	public partial class MainWindow : Window
 	{
+        bool muteB = true;
+        SoundPlayer a;
 		public MainWindow()
 		{
 			InitializeComponent();
-			//LoopSound();
-		}
+            LoopSound();
+        }
 
 		private void LoopSound()
 		{
-           
+
             Uri soundfile = new Uri("pack://application:,,,/gamesound.wav");
-			StreamResourceInfo sound = Application.GetResourceStream(soundfile);
-			SoundPlayer a = new SoundPlayer(sound.Stream);
-			a.PlayLooping();
-		}
+            StreamResourceInfo sound = Application.GetResourceStream(soundfile);
+            SoundPlayer a = new SoundPlayer(sound.Stream);
+            if (muteB == true)
+            {
+                a.PlayLooping();
+                muteB = false;
+            }
+            else
+            {
+                a.Stop();
+                muteB = true;
+            }
+        }
 
         private void btnPlay_Click(object sender, RoutedEventArgs e)
         {
-            this.Hide();
-            new Window1().Show();
+            string[] Names = { "2306Ren" };
+            int i;
+            for (i = 0; i < Names.Length; i++)
+            {
+                if (txtUsername.Text == Names[i])
+                {
+                    Window1 a = new Window1();
+                    a.Show();
+                    this.Close();
+                }
+            }
+            //if (txtUsername.Text != Names[i])
+            //{
+            //    MessageBox.Show("Please register to play");
+            //}
+        }
+
+        private void btnRegister_Click(object sender, RoutedEventArgs e)
+        {
+            Window2 b = new Window2();
+            b.Show();
+            this.Close();
+        }
+
+        private void txtUsername_GotFocus(object sender, RoutedEventArgs e)
+        {
+            txtUsername.Text = "";
+            string  a = "just checking something";
         }
     }
 }

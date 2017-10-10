@@ -12,9 +12,9 @@
                 <ImageBrush ImageSource="IMG-20170920-WA0006.jpg"/>
             </Image.OpacityMask>
         </Image>
-        <TextBox x:Name="username"  HorizontalAlignment="Left" Height="23" Margin="185,301,0,0" TextWrapping="Wrap" Text="Enter username" VerticalAlignment="Top" Width="172" Foreground="Green" FontFamily="Century Gothic"/>
+        <TextBox x:Name="txtUsername"  HorizontalAlignment="Left" Height="23" Margin="185,301,0,0" TextWrapping="Wrap" Text="Enter username" VerticalAlignment="Top" Width="172" Foreground="Green" FontFamily="Century Gothic" GotFocus="txtUsername_GotFocus"/>
         <Button x:Name="btnPlay" Content="Play" HorizontalAlignment="Left" Margin="236,360,0,0" VerticalAlignment="Top" Width="75" Foreground= "Green" FontFamily = "Century Gothic" Background="{x:Null}" Click="btnPlay_Click"/>
-        <Button x:Name="btnRegister" Content="Register" HorizontalAlignment="Left" Margin="409,424,0,0" VerticalAlignment="Top" Width="75" Foreground="Green" FontFamily="Century Gothic">
+        <Button x:Name="btnRegister" Content="Register" HorizontalAlignment="Left" Margin="409,424,0,26" Width="75" Foreground="Green" FontFamily="Century Gothic" Click="btnRegister_Click">
             <Button.Background>
                 <ImageBrush/>
             </Button.Background>

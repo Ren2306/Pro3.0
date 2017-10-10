@@ -24,17 +24,52 @@ namespace Hangman
     {
         private DispatcherTimer timer;
         private DateTime TimerStart;
+        BitmapImage[] Criminal;
+        int currentstate = 0;  //change of pictures
         public Window1()
         {
             InitializeComponent();
             LoopSound();
-
+            
+            string path = "pack://application:,,,/";
+            Criminal = new BitmapImage[]
+{
+                new BitmapImage(new Uri(path + "IMG-20170920-WA0001.jpg")),
+                new BitmapImage(new Uri(path +"IMG-20170920-WA0002.jpg")),
+                new BitmapImage(new Uri(path +"IMG-20170920-WA0003.jpg")),
+                new BitmapImage(new Uri(path +"IMG-20170920-WA0004.jpg")),
+                new BitmapImage(new Uri(path +"IMG-20170920-WA0000.jpg")),
+                new BitmapImage(new Uri(path +"IMG-20170920-WA0005.jpg"))
+};
             timer = new DispatcherTimer();
-
             TimerStart = DateTime.Now.AddMinutes(2);
             timer.Interval = TimeSpan.FromSeconds(1);
             timer.IsEnabled = true;
             timer.Tick += dispatcherEvent;
+            updateview();
+
+            
+        }
+
+        private void updateview()
+        {
+            image.Source = Criminal[currentstate]; // the changing of pictures
+        }
+
+        private void correctorwrong ()
+        {
+            switch (currentstate)
+            {
+                case 0: currentstate = 1;break;
+                case 1: currentstate = 2; break;  //change of pictures
+                case 2: currentstate = 3;break;
+                case 3: currentstate = 4;break;
+                case 4: currentstate = 5;break;
+                case 5: MessageBox.Show("You Lost", "try better next time", MessageBoxButton.OK, MessageBoxImage.Exclamation);break;
+
+                default:
+                    break;
+            }
         }
 
         private void dispatcherEvent(object sender, EventArgs e)
@@ -82,6 +117,11 @@ namespace Hangman
         private void Window_KeyUp(object sender, KeyEventArgs e)
         {
 
+        }
+
+        private void txtAnswer_GotFocus(object sender, RoutedEventArgs e)
+        {
+            txtAnswer.Text = "";
         }
     }
 }
