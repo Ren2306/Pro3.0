@@ -110,24 +110,25 @@ namespace Hangman
             a.Play();
         }
 
-        //private void Window_KeyDown(object sender, KeyEventArgs e)
-        //{
+        private void Window_KeyDown(object sender, KeyEventArgs e)
+        {
 
-        //    switch (e.Key)
-        //    {
+            switch (e.Key)
+            {
 
-        //        case Key.Enter: break;
+                case Key.P: LoopSound(); break;
 
-        //        case Key.P: break;
+            }
 
-        //    }
+        }
 
-        //}
-
-        //private void Window_KeyUp(object sender, KeyEventArgs e)
-        //{
-
-        //}
+        private void Window_KeyUp(object sender, KeyEventArgs e)
+        {
+            switch (e.Key)
+            {
+                case Key.P: break;
+            }
+        }
 
         private void txtAnswer_GotFocus(object sender, RoutedEventArgs e)
         {

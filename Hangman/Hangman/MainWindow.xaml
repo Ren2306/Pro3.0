@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Hangman"
         mc:Ignorable="d"
-        Title="Welcome" Height="500" Width="525" Background="Black">
+        Title="Welcome" Height="504" Width="525" Background="Black">
     <Grid>
         <Image x:Name="image" HorizontalAlignment="Left" Height="178" Margin="142,71,0,0" VerticalAlignment="Top" Width="237" Source="IMG-20170920-WA0006.jpg">
             <Image.OpacityMask>
@@ -14,7 +14,7 @@
         </Image>
         <TextBox x:Name="txtUsername"  HorizontalAlignment="Left" Height="23" Margin="185,301,0,0" TextWrapping="Wrap" Text="Enter username" VerticalAlignment="Top" Width="172" Foreground="Green" FontFamily="Century Gothic" GotFocus="txtUsername_GotFocus"/>
         <Button x:Name="btnPlay" Content="Play" HorizontalAlignment="Left" Margin="236,360,0,0" VerticalAlignment="Top" Width="75" Foreground= "Green" FontFamily = "Century Gothic" Background="{x:Null}" Click="btnPlay_Click"/>
-        <Button x:Name="btnRegister" Content="Register" HorizontalAlignment="Left" Margin="409,424,0,26" Width="75" Foreground="Green" FontFamily="Century Gothic" Click="btnRegister_Click">
+        <Button x:Name="btnRegister" Content="Register" HorizontalAlignment="Left" Margin="420,401,0,45" Width="75" Foreground="Green" FontFamily="Century Gothic" Click="btnRegister_Click">
             <Button.Background>
                 <ImageBrush/>
             </Button.Background>
