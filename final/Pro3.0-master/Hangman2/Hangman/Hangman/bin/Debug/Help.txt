@@ -1,0 +1,15 @@
+How to Register:
+
+Click the register button, add your username and clcik enter. 
+If your chosen username already exists you will be prompted to give another.
+
+
+How to Play:
+
+Once you have been registered you can sign in by entering your username and clicking play
+Then go on to choosing your category.
+Once you have chosen your category you will be redrected to the game window
+The aim of the game is to figure out as many words as you can under the time frame without killing the man on the screen
+Thus you get five chances to make a mistake throughout the game 
+To submit a word simply click the 'Enter' key
+
