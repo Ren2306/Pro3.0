@@ -31,6 +31,7 @@ namespace Hangman
 		public Window1()
 		{
 			InitializeComponent();
+            txtJumbled.IsReadOnly = true;
 			//LoopSound();
 			/*play(); */                                      // another problem here
 			string path = "pack://application:,,,/";
@@ -125,8 +126,10 @@ namespace Hangman
                     }
                     else
                     {
-                        if (count == 5)
+                        if (count == 4)
                         {
+                            count++;
+                            updateview();
                             MessageBox.Show("Oh no! Guess you'll have to start over");
 
                         }
@@ -155,8 +158,10 @@ namespace Hangman
                     }
                     else
                     {
-                        if (count == 5)
+                        if (count == 4)
                         {
+                            count++;
+                            updateview();
                             MessageBox.Show("Oh no! Guess you'll have to start over");
                         }
                         else
@@ -186,8 +191,10 @@ namespace Hangman
                 }
                 else
                 {
-                    if (count == 5)
+                    if (count == 4)
                     {
+                        count++;
+                        updateview();
                         MessageBox.Show("Oh no! Guess you'll have to start over");
                     }
                     else
@@ -214,9 +221,11 @@ namespace Hangman
                 }
            else
                 {
-                  if (i == 20 && count == 5)
+                  if (count == 4)
                    {
-                            MessageBox.Show("Oh no! Guess you'll have to start over");
+                        count++;
+                        updateview();
+                        MessageBox.Show("Oh no! Guess you'll have to start over");
                    }
               else
                    {
