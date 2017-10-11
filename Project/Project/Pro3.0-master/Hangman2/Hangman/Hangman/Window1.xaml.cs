@@ -200,7 +200,7 @@ namespace Hangman
                             incorrect();
                             LoopSound();
 
-                            if (CurrentState < HangmanState.final_stage)
+                            if (CurrentState <= HangmanState.final_stage)
                             {
                                 Hangman.ChangeImage((int)CurrentState);
                             }
