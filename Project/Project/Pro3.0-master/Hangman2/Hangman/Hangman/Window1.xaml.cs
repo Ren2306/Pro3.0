@@ -206,6 +206,7 @@ namespace Hangman
                             }
                             else
                             {
+                                Hangman.ChangeImage((int)CurrentState);
                                 timer.IsEnabled = false;
 
                                 MessageBoxResult result = MessageBox.Show($"You got {WordsCounter} words\nTry again?", "OOPS! You lost", MessageBoxButton.YesNo);
